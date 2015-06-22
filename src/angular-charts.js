@@ -53,7 +53,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
    * it's still better than a whole jQuery implementation
    * @param  {Array}  childrens       An array of childrens - element.children() or element.find('div')
    * @param  {String} className       Class name
-   * @return {Angular.element|null}    The founded child or null
+   * @return {angular.element|null}    The founded child or null
    */
   function getChildrenByClassname(childrens, className) {
     var child = null;
@@ -595,7 +595,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
             scope.$apply();
           })
           .on("mousemove", function(d) {
-            updateToolTip(d3.event);
+            updateToolTip(d, d3.event);
           })
           .on("click", function(d) {
             config.click(d, d3.event);
@@ -1026,7 +1026,7 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
             scope.$apply();
           })
           .on("mousemove", function(d) {
-            updateToolTip(d3.event);
+            updateToolTip(d, d3.event);
           })
           .on("click", function(d) {
             config.click(d, d3.event);
